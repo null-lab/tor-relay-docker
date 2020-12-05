@@ -2,7 +2,7 @@
 
 > Lightweight TOR relay image (13.37 MB), based on [Alpine Linux] Configurations can be passed as environment variables.
 
-[![dockeri.co](https://dockeri.co/image/ilshidur/tor-relay)](https://hub.docker.com/r/ilshidur/tor-relay)
+[![dockeri.co](https://dockeri.co/image/noconname/tor)](https://hub.docker.com/r/noconmame/tor)
 
 ## Usage
 
@@ -48,7 +48,7 @@ docker run \
   -p 9001:9001 \
   -p 9030:9030 \
   --entrypoint /entrypoint.sh \
-  --restart no \
+  --restart always \
   noconname/tor:1.0
 ```
 
@@ -75,7 +75,7 @@ docker run \
   -p 9001:9001 \
   -p 9030:9030 \
   --entrypoint /entrypoint.sh \
-  --restart no \
+  --restart always \
   noconname/tor:1.0
 ```
 
@@ -96,5 +96,5 @@ MIT
 
 <p align="center">
   Don't forget to 🌟 Star 🌟 the repo if you like this Docker image !<br/>
-  <a href="https://github.com/Ilshidur/tor-relay-docker/issues/new">Your feedback is appreciated</a>
+  <a href="https://github.com/null-lab/tor-relay-docker/issues/new">Your feedback is appreciated</a>
 </p>

@@ -10,10 +10,10 @@ services:
             - TOR_RelayBandwidthRate="100 KBytes"
             - TOR_RelayBandwidthBurst="200 KBytes"
             - TZ=Europe/London
-            - PUID=$(id -u)
-            - PGID=$(id -g)
+            - PUID=$$(id -u)
+            - PGID=$$(id -g)
         volumes:
-            - '$(pwd)/tor/data:/data:Z'
+            - '$PWD/tor/data:/data:Z'
         ports:
             - '9001:9001'
             - '9030:9030'

@@ -1,6 +1,6 @@
-# 🐋 ilshidur/tor-relay
+# 🐋 noconname/tor
 
-> Lightweight TOR relay image (13.37 MB), based on [LinuxServer.io Alpine Linux](https://linuxserver.io). Configurations can be passed as environment variables.
+> Lightweight TOR relay image (13.37 MB), based on [Alpine Linux] Configurations can be passed as environment variables.
 
 [![dockeri.co](https://dockeri.co/image/ilshidur/tor-relay)](https://hub.docker.com/r/ilshidur/tor-relay)
 
@@ -18,14 +18,15 @@ docker run \
   -e TOR_Nickname=ididnteditheconfig \
   -e TOR_RelayBandwidthRate="100 KBytes" \
   -e TOR_RelayBandwidthBurst="200 KBytes" \
-  -e TZ=Europe/London \
+  -e TZ=Europe/Madrid \
   -e PUID=$(id -u) \
   -e PGID=$(id -g) \
   -v $(pwd)/tor/data:/data:Z \
   -p 9001:9001 \
   -p 9030:9030 \
+  --entrypoint /entrypoint.sh \
   --restart always \
-  ilshidur/tor-relay
+  noconname/tor:1.0
 ```
 
 ### Relay mode
@@ -46,8 +47,9 @@ docker run \
   -v $(pwd)/tor/data:/data:Z \
   -p 9001:9001 \
   -p 9030:9030 \
-  --restart always \
-  ilshidur/tor-relay
+  --entrypoint /entrypoint.sh \
+  --restart no \
+  noconname/tor:1.0
 ```
 
 ### Exit node mode
@@ -72,8 +74,9 @@ docker run \
   -v $(pwd)/tor/data:/data:Z \
   -p 9001:9001 \
   -p 9030:9030 \
-  --restart always \
-  ilshidur/tor-relay
+  --entrypoint /entrypoint.sh \
+  --restart no \
+  noconname/tor:1.0
 ```
 
 ## Configuration

@@ -1,6 +1,6 @@
-FROM lsiobase/alpine:3.12
+FROM alpine:3.12
 
-LABEL maintainer "Nicolas Coutin <ilshidur@gmail.com>"
+LABEL maintainer "Irraz <irraz@r2brain.com>"
 
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV XDG_DATA_HOME="/config" \
@@ -9,7 +9,8 @@ ENV TZ America/Los_Angeles
 
 RUN sed -i -e 's/v[[:digit:]]\..*\//edge\//g' /etc/apk/repositories
 RUN apk update
-RUN apk --no-cache add bash tzdata tor=0.4.3.5-r0
+#RUN apk --no-cache add bash tzdata tor=0.4.3.5-r0
+RUN apk --no-cache add bash tzdata tor=0.4.4.6-r0
 
 EXPOSE 9001 9030
 
@@ -18,7 +19,7 @@ ENV RELAY_TYPE relay
 ENV TOR_ORPort 9001
 ENV TOR_DirPort 9030
 ENV TOR_DataDirectory /data
-ENV TOR_ContactInfo "Random Person nobody@tor.org"
+ENV TOR_ContactInfo "irraz irraz@r2brain.com"
 ENV TOR_RelayBandwidthRate "100 KBytes"
 ENV TOR_RelayBandwidthBurst "200 KBytes"
 

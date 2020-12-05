@@ -7,11 +7,11 @@ services:
             - TOR_ORPort=9001
             - TOR_DirPort=9030
             - TOR_Nickname=ididnteditheconfig
-            - 'TOR_RelayBandwidthRate=100 KBytes'
-            - 'TOR_RelayBandwidthBurst=200 KBytes'
+            - TOR_RelayBandwidthRate="100 KBytes"
+            - TOR_RelayBandwidthBurst="200 KBytes"
             - TZ=Europe/London
-            - PUID=$(id
-            - PGID=$(id
+            - PUID=$(id -u)
+            - PGID=$(id -g)
         volumes:
             - '$(pwd)/tor/data:/data:Z'
         ports:
